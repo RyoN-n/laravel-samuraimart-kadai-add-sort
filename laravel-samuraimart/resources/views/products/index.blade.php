@@ -30,7 +30,11 @@
                 @foreach($products as $product)
                 <div class="col-3">
                     <a href="{{route('products.show', $product)}}">
-                        <img src="{{ asset('img/dummy.png')}}" class="img-thumbnail">
+                        @if ($product->img !=="")
+                        <img src="{{ asset($product->image) }}" class="img-thumnail">
+                        @else
+                        <img src="{{ asset('img/dummy.png') }}" class="img-thumnail">
+                        @endif
                     </a>
                     <div class="row">
                         <div class="col-12">
